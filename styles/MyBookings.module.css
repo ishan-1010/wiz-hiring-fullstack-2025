@@ -1,0 +1,287 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+}
+
+.header {
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+}
+
+.backLink {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 1;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.searchSection {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.searchForm {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+.searchInput {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.searchButton {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.searchButton:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.searchButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.bookingsSection {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  color: #374151;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.bookingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.bookingCard {
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.bookingCard:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+}
+
+.eventInfo {
+  margin-bottom: 1rem;
+}
+
+.eventTitle {
+  color: #374151;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.eventDescription {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.slotInfo {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+}
+
+.slotTime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeItem {
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.timeItem strong {
+  color: #1f2937;
+}
+
+.bookingDetails {
+  margin-bottom: 1rem;
+}
+
+.bookingMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metaItem {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.metaItem strong {
+  color: #374151;
+}
+
+.viewEventButton {
+  display: block;
+  width: 100%;
+  background: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.viewEventButton:hover {
+  background: #4338ca;
+}
+
+.noBookings {
+  text-align: center;
+  color: #6b7280;
+  padding: 3rem 1rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.noBookings p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.noBookings p:first-child {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .searchSection, .bookingsSection {
+    padding: 1.5rem;
+  }
+  
+  .searchInput {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .searchButton {
+    width: 100%;
+  }
+  
+  .bookingsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .bookingCard {
+    padding: 1rem;
+  }
+} 

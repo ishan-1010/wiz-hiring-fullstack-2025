@@ -1,0 +1,26 @@
+{
+  "name": "bookmyslot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.9",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "drizzle-kit": "^0.31.1",
+    "drizzle-orm": "^0.44.2",
+    "next": "15.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
