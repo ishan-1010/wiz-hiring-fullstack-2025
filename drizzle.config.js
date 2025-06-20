@@ -1,8 +1,8 @@
 module.exports = {
-  schema: './db/schema.ts',
-  out: './db/migrations',
+  schema: './bookmyslot/db/schema.ts',
+  out: './bookmyslot/db/migrations',
   dialect: 'sqlite',
   dbCredentials: {
-    url: './db/bookmyslot.db',
+    url: './bookmyslot/db/bookmyslot.db',
   },
 }; 

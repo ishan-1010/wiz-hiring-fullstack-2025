@@ -2,11 +2,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { drizzle } from 'drizzle-orm/libsql';
 import { createClient } from '@libsql/client';
 import path from 'path';
-import { events } from '../../../db/schema';
+import { events } from '../../db/schema';
 
 // Set up the SQLite client and Drizzle instance
 const client = createClient({
-  url: `file:${path.join(process.cwd(), '..', 'db', 'bookmyslot.db')}`,
+  url: `file:${path.join(process.cwd(), 'db', 'bookmyslot.db')}`,
 });
 const db = drizzle(client);
 

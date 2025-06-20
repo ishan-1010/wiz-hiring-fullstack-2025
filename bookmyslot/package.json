@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:migrate": "node db/migrate.mjs"
   },
   "dependencies": {
-    "@libsql/client": "^0.15.9",
+    "@libsql/client": "^0.8.0",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "drizzle-kit": "latest",
