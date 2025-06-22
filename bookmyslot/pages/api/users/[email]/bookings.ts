@@ -1,18 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { drizzle } from 'drizzle-orm/libsql';
-import { createClient } from '@libsql/client';
-import path from 'path';
+import { getDatabase } from '../../../../db';
 import { bookings, slots, events } from '../../../../db/schema';
 import { eq } from 'drizzle-orm';
 
-// Set up the SQLite client and Drizzle instance
-const client = createClient({
-  url: `file:${path.join(process.cwd(), 'db', 'bookmyslot.db')}`,
-});
-const db = drizzle(client);
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { email } = req.query;
+  const db = await getDatabase();
 
   if (req.method === 'GET') {
     try {
@@ -21,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       
       // For each booking, get the slot and event details
       const bookingsWithDetails = await Promise.all(
-        userBookings.map(async (booking) => {
+        userBookings.map(async (booking: any) => {
           const slot = await db.select().from(slots as any).where(eq(slots.id as any, booking.slotId));
           const event = slot.length > 0 ? await db.select().from(events as any).where(eq(events.id as any, slot[0].eventId)) : [];
           

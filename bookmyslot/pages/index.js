@@ -92,19 +92,19 @@ export default function Home() {
                       <Link 
                         href={`/event/${event.id}`} 
                         className={styles.viewButton}
-                      >
+            >
                         View Details & Book
                       </Link>
                     </div>
                   ))}
-                </div>
+          </div>
               )}
             </>
           )}
         </main>
 
         <footer className={styles.footer}>
-          <p>&copy; 2025 BookMySlot. Built with Next.js and Drizzle ORM.</p>
+          <p>2025 BookMySlot. Built by Ishan Katoch.</p>
         </footer>
       </div>
     </>

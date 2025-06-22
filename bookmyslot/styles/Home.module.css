@@ -151,19 +151,19 @@
   cursor: pointer;
   margin-top: 1rem;
   transition: all 0.3s ease;
-}
+  }
 
 .retryButton:hover {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
-}
+  }
 
 .footer {
   text-align: center;
   padding: 2rem;
   color: white;
   opacity: 0.8;
-}
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -178,20 +178,20 @@
   .subtitle {
     font-size: 1.1rem;
   }
-  
+
   .headerActions {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .createButton, .bookingsButton {
     width: 200px;
   }
-  
+
   .main {
     padding: 1rem;
   }
-  
+
   .sectionTitle {
     font-size: 1.5rem;
   }
@@ -200,11 +200,11 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .eventCard {
     padding: 1.5rem;
   }
-  
+
   .eventMeta {
     flex-direction: column;
     gap: 0.5rem;

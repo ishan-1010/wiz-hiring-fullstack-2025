@@ -1,8 +1,5 @@
-const { drizzle } = require('drizzle-orm/sqlite-proxy');
-const { migrate } = require('drizzle-orm/sqlite-proxy/migrator');
-const sqlite3 = require('sqlite3');
-const { open } = require('sqlite');
-const path = require('path');
+const { drizzle } = require('drizzle-orm/libsql');
+const { createClient } = require('@libsql/client');
 
 let db;
 
@@ -11,17 +8,25 @@ async function getDatabase() {
     return db;
   }
 
-  // Create database file in the db directory
-  const dbPath = path.join(process.cwd(), 'db', 'bookmyslot.db');
-  
-  // Open SQLite database
-  const sqlite = await open({
-    filename: dbPath,
-    driver: sqlite3.Database
+  // Require Turso database URL and auth token
+  const databaseUrl = process.env.TURSO_DATABASE_URL;
+  const authToken = process.env.TURSO_AUTH_TOKEN;
+
+  if (!databaseUrl) {
+    throw new Error('TURSO_DATABASE_URL environment variable is required');
+  }
+
+  if (!authToken) {
+    throw new Error('TURSO_AUTH_TOKEN environment variable is required');
+  }
+
+  const client = createClient({
+    url: databaseUrl,
+    authToken: authToken,
   });
 
   // Create Drizzle instance
-  db = drizzle(sqlite);
+  db = drizzle(client);
   
   return db;
 }

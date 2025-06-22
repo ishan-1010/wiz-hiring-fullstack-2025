@@ -1,16 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { drizzle } from 'drizzle-orm/libsql';
-import { createClient } from '@libsql/client';
-import path from 'path';
+import { getDatabase } from '../../db';
 import { events } from '../../db/schema';
 
-// Set up the SQLite client and Drizzle instance
-const client = createClient({
-  url: `file:${path.join(process.cwd(), 'db', 'bookmyslot.db')}`,
-});
-const db = drizzle(client);
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const db = await getDatabase();
+
   if (req.method === 'POST') {
     // Create a new event
     const { title, description, creatorEmail, timezone, createdAt } = req.body;
